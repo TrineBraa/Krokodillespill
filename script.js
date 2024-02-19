@@ -11,30 +11,31 @@ function restartGame() {
     updateNumbers();
 }
 
+//funksjonen for hva du putter i input feltet.
 function submitTheAnswer() {
     if (document.getElementById("fieldForInput").value == "=" && topNumber == bottomNumber) {
         pointScore++;
-        updateNumbers()
     } else if (document.getElementById("fieldForInput").value == ">" && topNumber > bottomNumber) {
         pointScore++;
-        updateNumbers()
     }
     else if (document.getElementById("fieldForInput").value == "<" && topNumber < bottomNumber) {
         pointScore++;
-        updateNumbers()
     }
     else {
         pointScore--;
-        updateNumbers()
     }
+    updateNumbers()
+
 }
 
-
+//alt som redigerer number her i denne funksjonen. 
 function updateNumbers() {
     topNumber = RandomizeNumbers();
     bottomNumber = RandomizeNumbers();
     document.getElementById("topNumber").innerHTML = topNumber;
     document.getElementById("bottomNumber").innerHTML = bottomNumber;
+    document.getElementById("showThePoints").innerHTML = pointScore;
+    document.getElementById("fieldForInput").value = '';
 }
 
 
